@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+  layout "admin"
+  before_filter :authenticate_user!
+
   def index
     @items = Item.all
   end
@@ -14,7 +17,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(params[:item])
     if @item.save
-      redirect_to @item, :notice => "Successfully created item."
+      redirect_to edit_admin_item(@item), :notice => "Successfully created item."
     else
       render :action => 'new'
     end

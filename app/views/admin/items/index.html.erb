@@ -1,21 +1,25 @@
-<% title "Items" %>
+<% title Item.model_name.human %>
 
-<table>
+<table class="table">
+  <thead>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
+    <th><%= t(Item.human_attribute_name(:name)) %></th>
+    <th><%= t(Item.human_attribute_name(:description)) %></th>
+    <th><%= t(Item.human_attribute_name(:price)) %></th>
   </tr>
+  </thead>
+  <tbody>
   <% for item in @items %>
     <tr>
       <td><%= item.name %></td>
       <td><%= item.description %></td>
       <td><%= item.price %></td>
-      <td><%= link_to "Show", item %></td>
-      <td><%= link_to "Edit", edit_item_path(item) %></td>
-      <td><%= link_to "Destroy", item, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t(:show), item %></td>
+      <td><%= link_to t(:edit), edit_admin_item_path(item) %></td>
+      <td><%= link_to t(:destroy), admin_item_path(item), :confirm => t("messages.confirmation"), :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
-<p><%= link_to "New Item", new_item_path %></p>
+<p><%= link_to "Додати товар", new_admin_item_path %></p>
