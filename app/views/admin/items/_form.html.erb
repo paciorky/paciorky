@@ -1,16 +1,37 @@
-<%= simple_form_for [:admin, @item],  :html => { :class => 'form-horizontal' }  do |f| %>
+<%= tinymce_assets %>
+
+<%= simple_nested_form_for [:admin, @item], :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>
       <%= notification %>
     </div>
   <% end %>
+  <legend><%= yield(:title) %></legend>
   <%= f.input :name, :input_html => { :class => "span5" } %>
-  <%= f.input :description, :input_html => { :class => "span5" } %>
-  <%= f.input :price, :input_html => { :class => "span5" }, :wrapper => :append do
-      content_tag :span, "UAH", :class => "add-on"
-      f.input_field :price
-    end %>
+  <%= f.input :description, :input_html => { :class => "span5 tinymce" } %>
+  <%= tinymce :theme => "simple", :language => "uk" %>
+  <%= f.input :price, :label => "Ціна (грн.)", :input_html => { :class => "span5" } %>
+  <%= f.association :category %>
+
+  <% f.simple_fields_for :assets do |asset| %>
+    <% if asset.object.asset? %>
+      <div class="control-group">
+        <div class="controls">
+          <div class="polaroid" style="width: 300px;">
+            <%= image_tag(asset.object.asset.url) if asset.object.asset? %>
+          </div>
+          <p></br>
+            <%= asset.link_to_remove "Remove", class: "btn btn-danger" %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <legend>Upload new images</legend>
+  <% f.simple_fields_for :assets %>
+  <p><%= f.link_to_add "Add an image", :assets, :class => "btn" %></p>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

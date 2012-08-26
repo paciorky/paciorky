@@ -1,0 +1,16 @@
+<% title "Категорії" %>
+
+<div class="well"><%= link_to "Додати категорію", new_admin_category_path, :class => :btn %></div>
+
+<table class="table">
+  <thead>
+    <th><%= t(Category.human_attribute_name(:name)) %></th>
+  </thead>
+  <% for category in @categories %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to t(:edit), edit_category_path(category) %></td>
+    </tr>
+  <% end %>
+</table>
+

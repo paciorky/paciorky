@@ -10,21 +10,18 @@
  *
  *= require_self
  * require_tree .
- * require _bootstrap
- * require shop
 */
 
-$baseFontFamily: Georgia, "Times New Roman", Times, serif;
-$base-font-color: #000;
-$linkColor: #6A6A32;
-$linkColorHover:  darken($linkColor, 15%);
-
-@import "overrides.css";
-@import "bootstrap";
-@import "shop.css";
+@import "bootstrap_and_overrides.css";
 
 .content {
-  //background-color: #eee;
+  background-color: #eee;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }

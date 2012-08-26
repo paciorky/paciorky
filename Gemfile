@@ -13,7 +13,11 @@ gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.0.4.0"
 gem "devise", ">= 2.1.2"
 gem "simple_form"
+gem "nested_form"
 gem 'paperclip', '~> 3.0'
+#gem 'carrierwave'
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 group :development do
   gem "nifty-generators"

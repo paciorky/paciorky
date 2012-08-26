@@ -1,0 +1,8 @@
+<div class="block categories">
+  <h2 class="title">Роботи</h2>
+  <ul>
+    <% Category.all.each do |category| %>
+      <%= content_tag :li, link_to(category.name, category_path(category)) %>
+    <% end %>
+  </ul>
+</div>

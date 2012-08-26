@@ -1,6 +1,4 @@
-class Admin::ItemsController < ApplicationController
-  layout "admin"
-  before_filter :authenticate_user!
+class Admin::ItemsController < Admin::BaseController
 
   def index
     @items = Item.all
@@ -17,7 +15,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(params[:item])
     if @item.save
-      redirect_to edit_admin_item(@item), :notice => "Successfully created item."
+      redirect_to edit_admin_item_path(@item), :notice => "Successfully created item."
     else
       render :action => 'new'
     end
@@ -30,7 +28,7 @@ class Admin::ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update_attributes(params[:item])
-      redirect_to @item, :notice  => "Successfully updated item."
+      redirect_to edit_admin_item_path(@item), :notice  => "Successfully updated item."
     else
       render :action => 'edit'
     end

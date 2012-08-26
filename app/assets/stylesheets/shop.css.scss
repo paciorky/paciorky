@@ -1,0 +1,33 @@
+@import "bootstrap/_mixins.scss";
+
+body {
+  background: url("/assets/bg.jpg") repeat-y top center;
+}
+
+header {
+
+  .logo {
+    width: 961px;
+    height: 132px;
+    position: relative;
+    background: url(/assets/top_bg.jpg) no-repeat;
+    text-align: center;
+
+    img {
+      margin-top: 20px;
+    }
+  }
+}
+
+.sidebar .block {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  @include border-radius(5px);
+}
+
+.thumb {
+  margin-top: 20px;
+  margin-right: 20px;
+  img { border: 1px #000 solid; }
+  .title, .price { text-align: center; }
+}

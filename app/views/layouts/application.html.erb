@@ -1,37 +1,44 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><%= content_for?(:title) ? yield(:title) : "Paciorky" %></title>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <%= yield(:head) %>
-  </head>
-  <body>
-    <header class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= content_for?(:title) ? yield(:title) : "Paciorky" %></title>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+<body>
+<header>
+  <div class="container logo">
+    <%= link_to image_tag("paciorky_logo.png", :alt => "Головна"), root_path, :title => "Головна" %>
+  </div>
+  <div class="container">
+    <%= render 'layouts/navigation' %>
+  </div>
+</header>
+<div id="main" role="main">
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="span9">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
         </div>
-      </nav>
-    </header>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
+        <div class="span3 sidebar">
+          <!-- Categories -->
+          <%= render :partial => 'layouts/categories_block' %>
         </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
-  </body>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </div>
+  <!--! end of .container -->
+</div>
+<!--! end of #main -->
+</body>
 </html>

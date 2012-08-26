@@ -1,0 +1,5 @@
+<div class="thumb pull-left">
+  <%= link_to image_tag(item.assets.first.asset.url(:medium)), item %>
+  <div class="title"><%= link_to item.name, item %></div>
+  <div class="price"><%= number_to_currency(item.price) %></div>
+</div>

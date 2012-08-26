@@ -263,15 +263,19 @@ uk:
 
     models:
       item: 'Товар'
+      category: 'Категорія'
     attributes:
       item:
         name: 'Назва'
         description: 'Опис'
         price: 'Ціна'
+        category: 'Категорія'
+      category:
+              name: 'Назва'
 
   login: 'Увійти'
   logout: 'Вийти'
-  destroy: "Видалити"
-  edit: "Редагувати"
-  show: "Деталі"
-  no_translation_for: "Переклад вісутній для:"
+  destroy: 'Видалити'
+  edit: 'Редагувати'
+  show: 'Деталі'
+  no_translation_for: 'Переклад вісутній для:'
