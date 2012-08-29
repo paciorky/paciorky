@@ -14,13 +14,10 @@
  * require shop
 */
 
-$baseFontFamily: Georgia, "Times New Roman", Times, serif;
-$base-font-color: #000;
-$linkColor: #6A6A32;
-$linkColorHover:  darken($linkColor, 15%);
 
-@import "overrides.css";
+@import "_variables";
 @import "bootstrap";
+@import "overrides.css";
 @import "shop.css";
 
 .content {
@@ -28,3 +25,5 @@ $linkColorHover:  darken($linkColor, 15%);
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
+
+

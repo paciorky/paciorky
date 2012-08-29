@@ -1,1 +1,10 @@
-$baseFontFamily: Georgia, "Times New Roman", Times, serif;
+@import "_variables";
+
+body .btn {
+  color: #fff;
+  text-shadow: none;
+  &:hover {
+    color: #fff;
+    background-color: $btnBackgroundHighlight;
+  }
+}

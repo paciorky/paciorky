@@ -7,8 +7,8 @@ body {
 header {
 
   .logo {
-    width: 961px;
-    height: 132px;
+    width: 978px;
+    height: 138px;
     position: relative;
     background: url(/assets/top_bg.jpg) no-repeat;
     text-align: center;
@@ -19,15 +19,51 @@ header {
   }
 }
 
+// Sidebar
 .sidebar .block {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   @include border-radius(5px);
 }
 
+// Breadcrumbs
+.content .breadcrumb {
+  padding: 0;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  @include border-radius(none);
+  @include box-shadow(none);
+  li { text-shadow: none; }
+  .divider { padding: 0 2px; }
+}
+
+// ---------------------------------------------
+// Items
 .thumb {
   margin-top: 20px;
   margin-right: 20px;
   img { border: 1px #000 solid; }
   .title, .price { text-align: center; }
+}
+
+#large-image.thumb {
+  margin: 0;
+}
+
+#thumbs {
+  .thumb { margin: 0 0 10px; }
+;
+}
+
+.item-details {
+  margin-top: 10px;
+  .title,
+  .price {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .description { margin-top: 20px; }
 }
