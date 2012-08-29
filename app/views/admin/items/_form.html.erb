@@ -12,7 +12,7 @@
   <%= f.input :description, :input_html => { :class => "span5 tinymce" } %>
   <%= tinymce :theme => "simple", :language => "uk" %>
   <%= f.input :price, :label => "Ціна (грн.)", :input_html => { :class => "span5" } %>
-  <%= f.association :category %>
+  <%= f.association :category, :required => true %>
 
   <% f.simple_fields_for :assets do |asset| %>
     <% if asset.object.asset? %>
