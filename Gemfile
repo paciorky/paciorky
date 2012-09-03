@@ -18,6 +18,7 @@ gem 'paperclip', '~> 3.0'
 #gem 'carrierwave'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
+gem 'friendly_id'
 
 group :development do
   gem "nifty-generators"
