@@ -19,4 +19,15 @@ module LayoutHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+
+  def active_link_class(category = '')
+    # logger.debug category.inspect
+    'active' if active_link(category)
+  end
+
+  def active_link(category = '')
+    # logger.debug controller_name.inspect
+    # logger.debug category.inspect
+    (controller_name.try(:singularize).try(:downcase) == category.singularize.downcase)
+  end
 end
