@@ -6,8 +6,8 @@ class Item < ActiveRecord::Base
 
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+  #extend FriendlyId
+  #friendly_id :name, use: :slugged
 
   validates :name, :description, :price, :presence => true
 end

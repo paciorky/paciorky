@@ -14,11 +14,17 @@
   <% for item in @items %>
     <tr>
       <td><%= link_to image_tag(item.assets.first.asset.url(:thumb)), item %></td>
-      <td><%= item.name %></td>
+      <td><%= link_to item.name, item %></td>
       <td><%= number_to_currency(item.price) %></td>
-      <td><%= link_to t(:show), item %></td>
-      <td><%= link_to t(:edit), edit_admin_item_path(item) %></td>
-      <td><%= link_to t(:destroy), admin_item_path(item), :confirm => t("messages.confirmation"), :method => :delete %></td>
+      <td style="text-align: right;">
+        <%= link_to edit_admin_item_path(item), :class => "btn btn-small btn-primary" do %>
+          <i class="icon-pencil icon-white"></i> <%= t(:edit) %>
+        <% end %>
+
+        <%= link_to admin_item_path(item), :confirm => t("messages.confirmation"), :method => :delete, :class => "btn btn-small btn-danger" do %>
+          <i class="icon-trash icon-white"></i> <%= t(:destroy) %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>

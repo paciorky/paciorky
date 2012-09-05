@@ -29,4 +29,10 @@ class Admin::CategoriesController < Admin::BaseController
       render :action => 'show'
     end
   end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to admin_categories_url, :notice => "Successfully destroyed category."
+  end
 end

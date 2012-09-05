@@ -4,12 +4,20 @@
 
 <table class="table">
   <thead>
-    <th><%= t(Category.human_attribute_name(:name)) %></th>
+  <th><%= t(Category.human_attribute_name(:name)) %></th>
   </thead>
   <% for category in @categories %>
     <tr>
       <td><%= category.name %></td>
-      <td><%= link_to t(:edit), edit_admin_category_path(category) %></td>
+      <td style="text-align: right;">
+        <%= link_to edit_admin_category_path(category), :class => "btn btn-small btn-primary" do %>
+          <i class="icon-pencil icon-white"></i> <%= t(:edit) %>
+        <% end %>
+
+        <%= link_to admin_category_path(category), :confirm => t("messages.confirmation"), :method => :delete, :class => "btn btn-small btn-danger" do %>
+          <i class="icon-trash icon-white"></i> <%= t(:destroy) %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

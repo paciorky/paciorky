@@ -8,7 +8,7 @@
   <legend><%= yield(:title) %></legend>
 
   <%= f.input :name %>
-  <%= f.association :cover, :required => true %>
+  <%= f.association :cover, :collection => @category.items, :required => true unless @category.items.empty? %>
 
   <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
