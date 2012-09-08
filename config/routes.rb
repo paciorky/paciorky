@@ -1,4 +1,6 @@
 Paciorky::Application.routes.draw do
+  resources :pages, :only => [:show]
+
   resources :categories, :only => [:index, :show]
   resources :items, :only => [:show]
 
@@ -9,6 +11,7 @@ Paciorky::Application.routes.draw do
   namespace :admin do
     resources :items, :except => :show
     resources :categories, :except => :show
+    resources :pages, :except => [:show]
   end
 
 end
