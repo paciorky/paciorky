@@ -20,7 +20,7 @@
     <%= render 'layouts/navigation' %>
   </div>
 </header>
-<div id="main" role="main">
+<div id="main" role="main" class="wrapper">
   <div class="container">
     <div class="content">
       <div class="row">
@@ -33,14 +33,19 @@
           <%= render :partial => 'layouts/categories_block' %>
         </div>
       </div>
-      <footer>
-        <%= render 'layouts/navigation' %>
-        <div>Всі права застережено</div>
-      </footer>
+
     </div>
   </div>
+  <div class="push"><!--//--></div>
   <!--! end of .container -->
 </div>
+<footer id="footer" class="container">
+
+    <%= render 'layouts/navigation' %>
+    <div>Всі права застережено</div>
+
+</footer>
+
 <!--! end of #main -->
 </body>
 </html>

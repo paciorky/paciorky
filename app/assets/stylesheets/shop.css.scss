@@ -1,7 +1,17 @@
 @import "bootstrap/_mixins.scss";
+@import "_variables.scss";
+
+html, body { height: 100%; }
 
 body {
   background: url("/assets/bg.jpg") repeat-y top center;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
 }
 
 header {
@@ -38,6 +48,10 @@ header {
         background-color: rgba(255, 255, 255, 0.7);
       }
     }
+    &.active a {
+      color: $linkColor;
+      background-color: rgba(255, 255, 255, 0.7); }
+    &.active a:hover { color: $linkColorHover; }
   }
 }
 
@@ -46,6 +60,25 @@ header {
   background-color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   @include border-radius(5px);
+
+  .title {
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #463829;
+    padding-bottom: 5px;
+    margin: 10px 0;
+  }
+
+  ul {
+    margin-top: 15px;
+    padding-left: 10px;
+
+    li {
+      padding: 3px;
+      &.active a { text-decoration: underline; }
+    }
+  }
 }
 
 // Breadcrumbs
@@ -91,8 +124,10 @@ header {
   .description { margin-top: 20px; }
 }
 
+.push { height: 80px; }
+
 footer {
-  height: 80px;
+  height: 60px;
   padding: 20px;
   margin: 0 -20px;
   background: #463829;
@@ -109,6 +144,11 @@ footer {
           background-color: transparent;
         }
       }
+      &.active a {
+        color: #fff;
+        text-decoration: underline;
+        background: none; }
+      &.active a:hover { color: #fff; }
     }
   }
 }
