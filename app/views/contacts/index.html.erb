@@ -1,0 +1,30 @@
+<% title "Контакти" %>
+
+<%= form_tag contacts_path, :method => :post, :html => { :class => "form-horizontal" } do |f| %>
+  <div class="control-group">
+    <div class="controls">
+      <%= label_tag :name, "Ваше ім’я" %>
+      <%= text_field_tag :name, nil, :class => "span6" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, nil, :class => "span6" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= label_tag :subject, "Тема" %>
+      <%= text_field_tag :subject, nil, :class => "span6" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= label_tag :message, "Повідомлення" %>
+      <%= text_area_tag :message, nil, :rows => 10, :class => "span6" %>
+    </div>
+  </div>
+
+  <%= submit_tag "Надіслати", :class => :btn %>
+<% end %>
