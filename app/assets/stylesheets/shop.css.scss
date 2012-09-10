@@ -4,7 +4,7 @@
 html, body { height: 100%; }
 
 body {
-  background: url("/assets/bg.jpg") repeat-y top center;
+  background: image-url("bg.jpg") repeat-y top center;
 }
 
 .wrapper {
@@ -20,7 +20,7 @@ header {
     width: 978px;
     height: 138px;
     position: relative;
-    background: url(/assets/top_bg.jpg) no-repeat;
+    background: image-url("top_bg.jpg") no-repeat;
     text-align: center;
 
     img {

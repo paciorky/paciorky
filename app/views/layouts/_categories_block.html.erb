@@ -1,5 +1,5 @@
 <div class="block categories">
-  <h3 class="title">Категорії</h3>
+  <h4 class="title">Категорії</h4>
   <ul class="unstyled">
     <% Category.ordered_by_items.each do |category| %>
       <%= content_tag :li, link_to(category.name, category_path(category)),  :class => active_category_class(category.id) %>

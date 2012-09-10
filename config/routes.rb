@@ -3,7 +3,7 @@ Paciorky::Application.routes.draw do
   resources :pages, :only => [:show]
   resources :categories, :only => [:index, :show]
   resources :items, :only => [:show]
-  get "/contacts" => "contacts#index"
+  match "/contacts" => "contacts#index"
 
   root :to => "home#index"
   devise_for :users

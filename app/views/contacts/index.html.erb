@@ -1,30 +1,47 @@
 <% title "Контакти" %>
 
-<%= form_tag contacts_path, :method => :post, :html => { :class => "form-horizontal" } do |f| %>
+<ul class="breadcrumb clearfix">
+  <%= content_tag :li do %>
+    <%= link_to("Головна", root_path) %>
+    <span class="divider">/</span>
+  <% end %>
+  <%= content_tag :li, "Контакти", :class => :active %>
+</ul>
+
+<h1>Контакти</h1>
+
+<p><strong>моб.: </strong>097 91 225 13</p>
+<p><strong>e-mail: </strong><%= link_to "shop@paciorky.com", "mailto:shop@paciorky.com" %></p>
+<p><strong>Skype: </strong>dzjunka</p>
+<p><strong>ICQ: </strong>267567439</p>
+
+<%= form_tag contacts_path, :method => :post, :class => "form form-horizontal" do |f| %>
   <div class="control-group">
+    <%= label_tag :name, "Ваше ім’я", :class => "control-label" %>
     <div class="controls">
-      <%= label_tag :name, "Ваше ім’я" %>
       <%= text_field_tag :name, nil, :class => "span6" %>
     </div>
   </div>
   <div class="control-group">
+    <%= label_tag :email, nil, :class => "control-label" %>
     <div class="controls">
-      <%= label_tag :email %>
       <%= text_field_tag :email, nil, :class => "span6" %>
     </div>
   </div>
   <div class="control-group">
+    <%= label_tag :subject, "Тема", :class => "control-label" %>
     <div class="controls">
-      <%= label_tag :subject, "Тема" %>
       <%= text_field_tag :subject, nil, :class => "span6" %>
     </div>
   </div>
   <div class="control-group">
+    <%= label_tag :message, "Повідомлення", :class => "control-label" %>
     <div class="controls">
-      <%= label_tag :message, "Повідомлення" %>
       <%= text_area_tag :message, nil, :rows => 10, :class => "span6" %>
     </div>
   </div>
 
-  <%= submit_tag "Надіслати", :class => :btn %>
+  <div class="form-actions">
+    <%= submit_tag "Надіслати", :class => :btn %>
+  </div>
 <% end %>

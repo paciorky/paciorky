@@ -1,6 +1,6 @@
 /**
  * Created with JetBrains RubyMine.
- * User: gurnetko
+ * User: Ivan Kovalisko
  * Date: 29.08.12
  * Time: 11:29
  * To change this template use File | Settings | File Templates.
