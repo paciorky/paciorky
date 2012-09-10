@@ -8,30 +8,28 @@
     </div>
   <% end %>
   <legend><%= yield(:title) %></legend>
-  <%= f.input :name, :input_html => { :class => "span5" } %>
-  <%= f.input :description, :input_html => { :class => "span5 tinymce" } %>
+  <%= f.input :name, :input_html => { :class => "span8" } %>
+  <%= f.input :description, :input_html => { :class => "span8 tinymce" } %>
   <%= tinymce :theme => "simple", :language => "uk" %>
-  <%= f.input :price, :label => "Ціна (грн.)", :input_html => { :class => "span5" } %>
-  <%= f.association :category, :required => true %>
+  <%= f.input :price, :label => "Ціна (грн.)", :input_html => { :class => "span8" } %>
+  <%= f.association :category, :required => true, :input_html => { :class => 'span8' } %>
 
-  <% f.simple_fields_for :assets do |asset| %>
-    <% if asset.object.asset? %>
-      <div class="control-group">
-        <div class="controls">
-          <div class="polaroid" style="width: 300px;">
-            <%= image_tag(asset.object.asset.url) if asset.object.asset? %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.simple_fields_for :assets do |asset| %>
+        <% unless asset.object.new_record? %>
+          <div class="pull-left" style="padding-right: 5px;">
+            <%= image_tag(asset.object.asset.url(:thumb)) if asset.object.asset? %>
+            <p></br><%= asset.check_box :_destroy %>
+              </p>
           </div>
-          <p></br>
-            <%= asset.link_to_remove "Remove", class: "btn btn-danger" %>
-          </p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
-  <legend>Upload new images</legend>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <legend>Завантажити нові фотографії</legend>
   <% f.simple_fields_for :assets %>
-  <p><%= f.link_to_add "Add an image", :assets, :class => "btn" %></p>
+  <p><%= f.link_to_add "Додати фото", :assets, :class => "btn" %></p>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

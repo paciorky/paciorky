@@ -90,7 +90,13 @@ header {
   @include border-radius(none);
   @include box-shadow(none);
   li { text-shadow: none; }
-  .divider { padding: 0 2px; }
+  .divider {
+      padding: 0 2px;
+      color: $base-font-color;
+    }
+    .active {
+      color: $base-font-color;
+    }
 }
 
 // ---------------------------------------------
@@ -100,7 +106,7 @@ header {
   margin-right: 20px;
   img { border: 1px #000 solid; }
   .title, .price { text-align: center; }
-  &:nth-child(4n+2) { margin-right: 0; }
+  &:nth-child(4n+4) { margin-right: 0; }
 }
 
 #large-image.thumb {

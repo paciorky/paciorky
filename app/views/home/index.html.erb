@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= @frontpage.content.html_safe if @frontpage %>
+
+<div class="latest-items">
+  <h3>НОВИНКИ</h3>
+  <div class="content">
+    <%= render Item.latest_8 %>
+  </div>
+</div>

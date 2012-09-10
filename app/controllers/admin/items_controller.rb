@@ -1,7 +1,11 @@
 class Admin::ItemsController < Admin::BaseController
 
   def index
-    @items = Item.all
+    unless params[:category_id].blank?
+      @items = Item.find_all_by_category_id(params[:category_id])
+    else
+      @items = Item.all
+    end
   end
 
   def show

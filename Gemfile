@@ -10,15 +10,15 @@ gem "mysql2", ">= 0.3.11"
 
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.0.4.0"
+gem "bootstrap-sass", ">= 2.1.0.0"
 gem "devise", ">= 2.1.2"
 gem "simple_form"
 gem "nested_form"
-gem 'paperclip', '~> 3.0'
+gem "paperclip", "~> 3.2"
 #gem 'carrierwave'
-gem 'tinymce-rails'
-gem 'tinymce-rails-langs'
-gem 'friendly_id'
+gem "tinymce-rails"
+gem "tinymce-rails-langs"
+gem "friendly_id"
 
 group :development do
   gem "nifty-generators"

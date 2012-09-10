@@ -6,8 +6,10 @@ class Item < ActiveRecord::Base
 
   accepts_nested_attributes_for :assets, :allow_destroy => true
 
-  #extend FriendlyId
-  #friendly_id :name, use: :slugged
+  validates :name, :description, :price, :category_id, :presence => true
 
-  validates :name, :description, :price, :presence => true
+  default_scope :order => "created_at desc"
+  scope :latest_8,
+        order("created_at DESC").
+            limit(8)
 end

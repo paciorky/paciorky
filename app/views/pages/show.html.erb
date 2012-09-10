@@ -1,16 +1,15 @@
-<% title "Page" %>
+<% title @page.title %>
 
+<ul class="breadcrumb clearfix">
+  <%= content_tag :li do %>
+    <%= link_to("Головна", root_path) %>
+    <span class="divider">/</span>
+  <% end %>
+  <%= content_tag :li, @page.title, :class => :active %>
+</ul>
+
+<h2><%= @page.title %></h2>
 <p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @page.content %>
+<%= @page.content.html_safe %>
 </p>
 
-<p>
-  <%= link_to "Edit", edit_page_path(@page) %> |
-  <%= link_to "Destroy", @page, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", pages_path %>
-</p>

@@ -13,7 +13,6 @@
         <%= link_to edit_admin_category_path(category), :class => "btn btn-small btn-primary" do %>
           <i class="icon-pencil icon-white"></i> <%= t(:edit) %>
         <% end %>
-
         <%= link_to admin_category_path(category), :confirm => t("messages.confirmation"), :method => :delete, :class => "btn btn-small btn-danger" do %>
           <i class="icon-trash icon-white"></i> <%= t(:destroy) %>
         <% end %>

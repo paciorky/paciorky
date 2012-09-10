@@ -1,4 +1,6 @@
-
-
 <%= f.input :asset %>
-<%= f.link_to_remove t("remove") %>
+<div class="control-group">
+  <div class="controls">
+    <%= f.link_to_remove t("remove"), :class => "btn btn-danger btn-small" %>
+  </div>
+</div>

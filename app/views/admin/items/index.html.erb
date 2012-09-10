@@ -1,6 +1,12 @@
 <% title Item.model_name.human %>
 
-<div class="well"><%= link_to "Додати товар", new_admin_item_path, :class => :btn %></div>
+<div class="well">
+  <%= link_to "Додати товар", new_admin_item_path, :class => :btn %>
+  <%= form_tag admin_items_path, :method => :get, :class => 'form-inline pull-right' do |f| %>
+    <%= label_tag "Категорії: " %>
+    <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]),  { :include_blank => true, :onchange => 'this.form.submit()' } %>
+  <% end %>
+</div>
 
 <table class="table">
   <thead>
@@ -8,6 +14,7 @@
     <th></th>
     <th><%= t(Item.human_attribute_name(:name)) %></th>
     <th><%= t(Item.human_attribute_name(:price)) %></th>
+    <th>Додано</th>
   </tr>
   </thead>
   <tbody>
@@ -16,6 +23,7 @@
       <td><%= link_to image_tag(item.assets.first.asset.url(:thumb)), item %></td>
       <td><%= link_to item.name, item %></td>
       <td><%= number_to_currency(item.price) %></td>
+      <td><%= item.created_at.strftime("%d/%m/%Y") %></td>
       <td style="text-align: right;">
         <%= link_to edit_admin_item_path(item), :class => "btn btn-small btn-primary" do %>
           <i class="icon-pencil icon-white"></i> <%= t(:edit) %>
