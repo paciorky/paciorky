@@ -35,3 +35,6 @@ group :test do
 end
 
 gem "mocha", :group => :test
+
+gem "capistrano"
+gem "rvm-capistrano"
