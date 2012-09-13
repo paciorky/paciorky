@@ -48,8 +48,8 @@ end
 
 task :db_setup, :roles => :app do
   run <<-CMD
-           rm -f #{latest_release}/config/database.yml &&
-           ln -s #{shared_path}/database.yml #{latest_release}/config/database.yml
+           rm -f #{release_path}/config/database.yml &&
+           ln -s #{shared_path}/database.yml #{release_path}/config/database.yml
 
   CMD
 
