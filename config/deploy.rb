@@ -12,7 +12,7 @@ require "rvm/capistrano"
 
 default_run_options[:pty] = true
 set :application, "Paciorky"
-set :repository,  "http://deployer:e0TdnCyJ@hg.paciorky.com/ruby/paciorky"
+set :repository, "http://deployer:e0TdnCyJ@hg.paciorky.com/ruby/paciorky"
 
 set :scm, "git"
 set :scm_password, "e0TdnCyJ"
@@ -35,9 +35,22 @@ set :use_sudo, false
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
+  task :start do
+    ;
+  end
+  task :stop do
+    ;
+  end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
+  end
+end
+
+task :db_setup, :roles => :app do
+  run <<-CMD
+           rm -f #{latest_release}/config/database.yml &&
+           ln -s #{shared_path}/database.yml #{latest_release}/config/database.yml
+
+  CMD
+
 end
