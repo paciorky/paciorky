@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap-alert
 //= require jquery_nested_form
-//= require item

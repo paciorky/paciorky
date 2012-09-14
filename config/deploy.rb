@@ -35,6 +35,9 @@ set :use_sudo, false
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
+  task :seeds do
+      run "cd #{release_path} && bundle exec rake db:seeds RAILS_ENV=#{rails_env}"
+    end
   task :start do
     ;
   end
