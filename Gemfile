@@ -4,13 +4,14 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem "bootstrap-sass", ">= 2.1.0.0"
 end
 gem 'jquery-rails'
 gem "mysql2", ">= 0.3.11"
 
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.1.0.0"
+
 gem "devise", ">= 2.1.2"
 gem "simple_form"
 gem "nested_form"

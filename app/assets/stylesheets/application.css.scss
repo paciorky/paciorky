@@ -10,15 +10,17 @@
  *
  *= require_self
  * require_tree .
+ * require _variables
  * require _bootstrap
- * require shop
+ *= require overrides
+ *= require shop
 */
 
 
 @import "_variables";
 @import "bootstrap";
-@import "overrides.css";
-@import "shop.css";
+//@import "overrides.css";
+//@import "shop.css";
 
 .content {
   //background-color: #eee;
