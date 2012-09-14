@@ -14,7 +14,7 @@ class Admin::PagesController < Admin::BaseController
   def create
     @page = Page.new(params[:page])
     if @page.save
-      redirect_to admin_pages_url, :notice => "Successfully created page."
+      redirect_to admin_pages_url, :notice => t('page.notice.created')
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class Admin::PagesController < Admin::BaseController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      redirect_to admin_pages_url, :notice  => "Successfully updated page."
+      redirect_to admin_pages_url, :notice  => t('page.notice.edited')
     else
       render :action => 'edit'
     end
@@ -36,6 +36,6 @@ class Admin::PagesController < Admin::BaseController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
-    redirect_to admin_pages_url, :notice => "Successfully destroyed page."
+    redirect_to admin_pages_url, :notice => t('page.notice.deleted')
   end
 end

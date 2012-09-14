@@ -21,7 +21,7 @@ class Admin::ItemsController < Admin::BaseController
     if @item.save
       @item.category.cover = @item if @item.category.items.count <= 1
       if @item.category.save
-        redirect_to edit_admin_item_path(@item), :notice => "Successfully created item."
+        redirect_to edit_admin_item_path(@item), :notice => t('item.notice.created')
       end
     else
       render :action => 'new'
@@ -35,7 +35,7 @@ class Admin::ItemsController < Admin::BaseController
   def update
     @item = Item.find(params[:id])
     if @item.update_attributes(params[:item])
-      redirect_to edit_admin_item_path(@item), :notice => "Successfully updated item."
+      redirect_to edit_admin_item_path(@item), :notice => t('item.notice.edited')
     else
       render :action => 'edit'
     end
@@ -44,6 +44,6 @@ class Admin::ItemsController < Admin::BaseController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to admin_items_url, :notice => "Successfully destroyed item."
+    redirect_to admin_items_url, :notice => t('item.notice.deleted')
   end
 end

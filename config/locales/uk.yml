@@ -170,6 +170,19 @@ uk:
       create: Створити %{model}
       submit: Зберегти %{model}
       update: Зберегти %{model}
+
+      item:
+        create: Додати товар
+        submit: Зберегти товар
+        update: Зберегти товар
+      category:
+        create: Додати категорію
+        submit: Зберегти категорію
+        update: Зберегти категорію
+      page:
+        create: Додати сторінку
+        submit: Зберегти сторінку
+        update: Зберегти сторінку
   messages:
     confirmation: 'Ви впевнені?'
   number:
@@ -271,11 +284,50 @@ uk:
         price: 'Ціна'
         category: 'Категорія'
       category:
-              name: 'Назва'
+        name: 'Назва'
+        cover: 'Обкладинка'
+      page:
+        title: 'Заголовок'
+        slug: 'Короткий лінк (анг.)'
+        content: 'Наповнення'
+      asset:
+        asset: 'Фото'
 
   login: 'Увійти'
   logout: 'Вийти'
   destroy: 'Видалити'
   edit: 'Редагувати'
   show: 'Деталі'
+  cancel: 'Скасувати'
   no_translation_for: 'Переклад вісутній для:'
+
+  web-app-theme:
+    confirm: Ви впевнені?
+
+  ### Item ###
+  item:
+    form:
+      new: Новий товар
+      edit: Редагуваня товару
+    notice:
+      created: Товар успішно додано.
+      edited: Товар успішно збережено.
+      deleted: Товар видалено :(
+  category:
+    form:
+      new: Нова категорія
+      edit: Редагування категорії
+    notice:
+      created: Категорію успішно додано.
+      edited: Категорію успішно збережено.
+      deleted: Категорію видалено :(
+  page:
+    form:
+      new: Нова сторінка
+      edit: Редагування сторінки
+    notice:
+      created: Сторінку успішно додано.
+      edited: Сторінку успішно збережено.
+      deleted: Сторінку видалено :(
+
+

@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   has_many :items, :order => "created_at desc"
   belongs_to :cover, :class_name => 'Item'
 
-  validates :name, :cover_id, :presence => true
+  validates :name, :presence => true
 
   scope :ordered_by_items,
         select("categories.*, count(items.id) AS items_count").

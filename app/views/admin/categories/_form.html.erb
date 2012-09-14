@@ -8,10 +8,10 @@
   <legend><%= yield(:title) %></legend>
 
   <%= f.input :name %>
-  <%= f.association :cover, :collection => @category.items, :required => true unless @category.items.empty? %>
+  <%= f.association :cover, :collection => @category.items unless @category.items.empty? %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
-    <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+    <%= link_to 'Скасувати', admin_categories_path, :class => "btn btn-danger" %>
   </div>
 <% end %>
