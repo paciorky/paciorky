@@ -104,6 +104,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_form (1.3.0)
     metaclass (0.0.1)
     mime-types (1.19)
     mocha (0.12.3)
@@ -222,6 +223,7 @@ DEPENDENCIES
   friendly_id
   jquery-rails
   launchy (>= 2.1.2)
+  mail_form
   mocha
   mysql2 (>= 0.3.11)
   nested_form

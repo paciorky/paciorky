@@ -1,0 +1,35 @@
+<% title "Контакти" %>
+
+<ul class="breadcrumb clearfix">
+  <%= content_tag :li do %>
+    <%= link_to("Головна", root_path) %>
+    <span class="divider">/</span>
+  <% end %>
+  <%= content_tag :li, "Контакти", :class => :active %>
+</ul>
+
+<h1>Контакти</h1>
+
+<p><strong>моб.: </strong>097 91 225 13</p>
+<p><strong>e-mail: </strong><%= link_to "shop@paciorky.com", "mailto:shop@paciorky.com" %></p>
+<p><strong>Skype: </strong>dzjunka</p>
+<p><strong>ICQ: </strong>267567439</p>
+
+<%= simple_form_for @message, :url => contacts_path, :method => :post, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+  <% if notification = f.error_notification %>
+    <div class="alert alert-error fade in">
+      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <%= notification %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, :input_html => { :class => :span6 } %>
+  <%= f.input :email, :input_html => { :class => :span6 }  %>
+  <%= f.input :subject, :input_html => { :class => :span6 }  %>
+  <%= f.input :body, :as => :text, :input_html => { :class => :span6 }  %>
+  <%= f.input :nickname, :as=>:hidden %>
+
+  <div class="form-actions">
+    <%= f.submit "Надіслати", :class => :btn %>
+  </div>
+<% end %>

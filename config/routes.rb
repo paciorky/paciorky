@@ -3,9 +3,11 @@ Paciorky::Application.routes.draw do
   resources :pages, :only => [:show]
   resources :categories, :only => [:index, :show]
   resources :items, :only => [:show]
-  match "/contacts" => "contacts#index"
 
-  root :to => "home#index"
+  match "/contacts" => "contacts#new", :as => 'contacts', :via => :get
+  match '/contacts/sent' => 'contacts#create', :as => 'contacts_sent', :via => :post
+
+  root :to => "home#new"
   devise_for :users
 
   get "/admin" => redirect("/admin/items")

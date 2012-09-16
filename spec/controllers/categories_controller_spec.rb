@@ -4,9 +4,9 @@ describe CategoriesController do
   fixtures :all
   render_views
 
-  it "index action should render index template" do
-    get :index
-    response.should render_template(:index)
+  it "new action should render new template" do
+    get :new
+    response.should render_template(:new)
   end
 
   it "show action should render show template" do

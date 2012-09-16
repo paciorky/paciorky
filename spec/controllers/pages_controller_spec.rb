@@ -4,9 +4,9 @@ describe PagesController do
   fixtures :all
   render_views
 
-  it "index action should render index template" do
-    get :index
-    response.should render_template(:index)
+  it "new action should render new template" do
+    get :new
+    response.should render_template(:new)
   end
 
   it "show action should render show template" do
@@ -48,7 +48,7 @@ describe PagesController do
     response.should redirect_to(page_url(assigns[:page]))
   end
 
-  it "destroy action should destroy model and redirect to index action" do
+  it "destroy action should destroy model and redirect to new action" do
     page = Page.first
     delete :destroy, :id => page
     response.should redirect_to(pages_url)

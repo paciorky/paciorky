@@ -270,6 +270,15 @@ uk:
   activemodel:
     errors:
       <<: *errors
+
+    models:
+      message: "Форма контакту"
+    attributes:
+      message:
+        name: "Ім’я"
+        email: "E-mail"
+        subject: "Тема"
+        body: "Повідомлення"
   activerecord:
     errors:
       <<: *errors
@@ -329,5 +338,4 @@ uk:
       created: Сторінку успішно додано.
       edited: Сторінку успішно збережено.
       deleted: Сторінку видалено :(
-
 
