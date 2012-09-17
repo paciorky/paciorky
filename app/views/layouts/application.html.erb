@@ -12,6 +12,7 @@
   <%= yield(:head) %>
 </head>
 <body>
+<%= yield(:fb_init) %>
 <header>
   <div class="container logo">
     <%= link_to image_tag("paciorky_logo.png", :alt => "Головна"), root_path, :title => "Головна" %>

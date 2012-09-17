@@ -7,7 +7,7 @@ Paciorky::Application.routes.draw do
   match "/contacts" => "contacts#new", :as => 'contacts', :via => :get
   match '/contacts/sent' => 'contacts#create', :as => 'contacts_sent', :via => :post
 
-  root :to => "home#new"
+  root :to => "home#index"
   devise_for :users
 
   get "/admin" => redirect("/admin/items")

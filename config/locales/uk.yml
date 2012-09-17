@@ -309,6 +309,7 @@ uk:
   show: 'Деталі'
   cancel: 'Скасувати'
   no_translation_for: 'Переклад вісутній для:'
+  message_sent: "Дякуємо! Ваше повідомлення надіслано."
 
   web-app-theme:
     confirm: Ви впевнені?

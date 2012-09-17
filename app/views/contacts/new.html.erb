@@ -15,7 +15,7 @@
 <p><strong>Skype: </strong>dzjunka</p>
 <p><strong>ICQ: </strong>267567439</p>
 
-<%= simple_form_for @message, :url => contacts_path, :method => :post, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @message, :url => contacts_sent_path, :method => :post, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>

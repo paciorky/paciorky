@@ -1,3 +1,17 @@
+<%= content_for :fb_init do %>
+  <div id="fb-root"></div>
+  <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=532702436746525";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<% end %>
+
 <% title @item.name %>
 <ul class="breadcrumb clearfix">
   <%= content_tag :li do %>
@@ -9,22 +23,23 @@
     <span class="divider">/</span>
   <% end %>
   <%= content_tag :li do %>
-      <%= link_to(@item.category.name, @item.category) %>
-      <span class="divider">/</span>
-    <% end %>
+    <%= link_to(@item.category.name, @item.category) %>
+    <span class="divider">/</span>
+  <% end %>
   <%= content_tag :li, @item.name, :class => :active %>
 </ul>
 
 <div id="large-image" class="pull-left thumb"><%= image_tag(@item.assets.first.asset.url(:large)) %></div>
 <div id="thumbs" class="pull-right">
   <ul class="unstyled">
-  <% @item.assets.each do |asset| %>
-    <%= content_tag :li, link_to(image_tag(asset.asset.url(:thumb)), asset.asset.url(:large)), :class => :thumb %>
-  <% end %>
+    <% @item.assets.each do |asset| %>
+      <%= content_tag :li, link_to(image_tag(asset.asset.url(:thumb)), asset.asset.url(:large)), :class => :thumb %>
+    <% end %>
   </ul>
 </div>
 <div class="item-details pull-left clearfix">
   <h1 class="title"><%= @item.name %></h1>
+
   <div class="price"><%= number_to_currency(@item.price) %></div>
   <a class="btn">Купити</a>
 
@@ -32,4 +47,10 @@
     <%= @item.description.html_safe %>
   </div>
 
+  <div class="social-buttons">
+    <div class="pull-left"><a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= URI::encode(item_url(@item)) %>" data-via="paciorky" data-lang="en">Tweet</a></div>
+    <div class="fb-like pull-left" style="margin-right:21px;" data-href="<%= item_url(@item) %>" data-layout="button_count"  data-width="250" data-show-faces="false" ></div>
+    <div class="pull-left"><a href="http://pinterest.com/pin/create/button/?url=<%= URI::encode(item_url(@item)) %>&media=<%= URI::encode(item_url(@item.assets.first.asset.url(:large)))%>&description=<%= URI::encode(strip_tags(@item.description).split(/\s+/, 50+1)[0...50].join(' '))%>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>
+  </div>
 </div>
+
