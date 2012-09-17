@@ -12,4 +12,8 @@ class Item < ActiveRecord::Base
   scope :latest_8,
         order("created_at DESC").
             limit(8)
+
+  def name_shorten
+   self.name.slice(0, 20) + (self.name.length > 20 ? "..." : "")
+  end
 end

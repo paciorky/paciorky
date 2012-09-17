@@ -8,8 +8,16 @@
     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=532702436746525";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+  <script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs");</script>
 <% end %>
 
 <% title @item.name %>
@@ -38,19 +46,25 @@
   </ul>
 </div>
 <div class="item-details pull-left clearfix">
-  <h1 class="title"><%= @item.name %></h1>
+  <h1 class="title  pull-left"><%= @item.name %></h1>
+
+  <div class="social-buttons  pull-right" style="margin-right: 100px;">
+    <div class="pull-left">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= URI::encode(item_url(@item)) %>" data-via="paciorky" data-count="horizontal" data-lang="en">Tweet</a>
+    </div>
+    <div class="fb-like pull-left" style="margin-right:21px;" data-href="<%= item_url(@item) %>" data-layout="button_count" data-width="250" data-show-faces="false"></div>
+    <div class="pull-left">
+      <a href="http://pinterest.com/pin/create/button/?url=<%= URI::encode(item_url(@item)) %>&media=<%= URI::encode(item_url(@item.assets.first.asset.url(:large))) %>&description=<%= URI::encode(strip_tags(@item.description).split(/\s+/, 50+1)[0...50].join(' ')) %>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It"/></a>
+    </div>
+  </div>
 
   <div class="price"><%= number_to_currency(@item.price) %></div>
-  <a class="btn">Купити</a>
+  <a class="btn btn-buy ">Придбати</a>
 
-  <div class="description ">
+  <div class="description">
     <%= @item.description.html_safe %>
   </div>
 
-  <div class="social-buttons">
-    <div class="pull-left"><a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= URI::encode(item_url(@item)) %>" data-via="paciorky" data-lang="en">Tweet</a></div>
-    <div class="fb-like pull-left" style="margin-right:21px;" data-href="<%= item_url(@item) %>" data-layout="button_count"  data-width="250" data-show-faces="false" ></div>
-    <div class="pull-left"><a href="http://pinterest.com/pin/create/button/?url=<%= URI::encode(item_url(@item)) %>&media=<%= URI::encode(item_url(@item.assets.first.asset.url(:large)))%>&description=<%= URI::encode(strip_tags(@item.description).split(/\s+/, 50+1)[0...50].join(' '))%>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>
-  </div>
+
 </div>
 
