@@ -47,6 +47,9 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"
   end
+  task :refresh_images do
+    run "cd #{current_path} && bundle exec rake paperclip:refresh class=Asset RAILS_ENV=#{rails_env}"
+  end
 end
 
 task :db_setup, :roles => :app do
