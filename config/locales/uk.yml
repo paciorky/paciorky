@@ -286,6 +286,8 @@ uk:
     models:
       item: 'Товар'
       category: 'Категорія'
+      page: 'Сторінка'
+      order: 'Замовлення'
     attributes:
       item:
         name: 'Назва'
@@ -301,6 +303,20 @@ uk:
         content: 'Наповнення'
       asset:
         asset: 'Фото'
+      order:
+        first_name: 'Ім’я'
+        last_name: 'Прізвище'
+        phone: 'Моб. телефон'
+        city: 'Місто'
+        comments: 'Коментарі'
+    state_machines:
+      states:
+        new: 'Нове'
+        delivered: 'Відправлено'
+        canceled: 'Скасовано'
+      event:
+        deliver: 'Доставити'
+        cancel: 'Скасувати'
 
   login: 'Увійти'
   logout: 'Вийти'

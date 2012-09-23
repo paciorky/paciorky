@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909134208) do
+ActiveRecord::Schema.define(:version => 20120923210213) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -38,9 +38,23 @@ ActiveRecord::Schema.define(:version => 20120909134208) do
     t.datetime "updated_at",  :null => false
     t.integer  "category_id"
     t.string   "slug"
+    t.boolean  "published"
   end
 
   add_index "items", ["slug"], :name => "index_items_on_slug", :unique => true
+
+  create_table "orders", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "phone"
+    t.text     "comments"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "item_id"
+    t.string   "state"
+    t.string   "email"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"

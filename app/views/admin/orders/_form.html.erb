@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @order],  :html => { :class => 'form-horizontal' } do |f| %>
+    <% if notification = f.error_notification %>
+      <div class="alert alert-error fade in">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        <%= notification %>
+      </div>
+    <% end %>
+
+    <%= f.input :first_name, :input_html => { :class => :span4 } %>
+    <%= f.input :last_name, :input_html => { :class => :span4 } %>
+    <%= f.input :city, :input_html => { :class => :span4 } %>
+    <%= f.input :email, :input_html => { :class => :span4 } %>
+    <%= f.input :phone, :input_html => { :class => :span4 } %>
+    <%= f.input :comments, :input_html => { :class => :span4 } %>
+
+    <div class="form-actions">
+      <%= f.submit "Зберегти", :class => :btn %>
+    </div>
+  <% end %>

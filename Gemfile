@@ -20,7 +20,7 @@ gem "paperclip", "~> 3.2"
 gem "tinymce-rails"
 gem "tinymce-rails-langs"
 gem "friendly_id"
-gem "mail_form"
+gem "state_machine"
 
 group :development do
   gem "nifty-generators"

@@ -59,7 +59,7 @@
   </div>
 
   <div class="price"><%= number_to_currency(@item.price) %></div>
-  <a class="btn btn-buy ">Придбати</a>
+  <%= link_to 'Придбати', new_order_path(@item.id), :class => 'btn btn-buy' %>
 
   <div class="description">
     <%= @item.description.html_safe %>

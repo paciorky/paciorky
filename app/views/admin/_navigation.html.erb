@@ -2,6 +2,7 @@
 <ul class="nav">
   <%= content_tag :li, link_to("Товари", admin_items_path), :class => active_link_class('items') %>
   <%= content_tag :li, link_to("Категорії", admin_categories_path), :class => active_link_class('categories') %>
+  <%= content_tag :li, link_to("Замовлення", admin_orders_path), :class => active_link_class('orders') %>
   <%= content_tag :li, link_to("Сторінки", admin_pages_path), :class => active_link_class('pages') %>
 </ul>
 <ul class="nav pull-right">

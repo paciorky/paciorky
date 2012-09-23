@@ -2,4 +2,9 @@
   <%= link_to image_tag(item.assets.first.asset.url(:medium)), item %>
   <div class="title"><%= link_to item.name_shorten, item %></div>
   <div class="price"><%= number_to_currency(item.price) %></div>
+  <% if false %>
+    <strong class="promo-container hide">
+      <strong class="promo"></strong>
+    </strong>
+  <% end %>
 </div>
