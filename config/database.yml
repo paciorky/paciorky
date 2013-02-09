@@ -28,7 +28,7 @@ test: &test
   database: paciorky_test
   pool: 5
   username: root
-  password:
+  password: Gfhfcjkz11
   host: localhost
 
 production:

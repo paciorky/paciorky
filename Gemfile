@@ -1,42 +1,39 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "bootstrap-sass", ">= 2.1.0.0"
+  gem "therubyracer", :platform => :ruby
 end
 gem 'jquery-rails'
 gem "mysql2", ">= 0.3.11"
-
-gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
-gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
 
 gem "devise", ">= 2.1.2"
 gem "simple_form"
 gem "nested_form"
 gem "paperclip", "~> 3.2"
-#gem 'carrierwave'
 gem "tinymce-rails"
 gem "tinymce-rails-langs"
 gem "friendly_id"
 gem "state_machine"
 
-group :development do
+group :development, :test do
   gem "nifty-generators"
-end
-
-group :test do
-  gem "capybara", ">= 1.1.2"
+  gem "rspec-rails", ">= 2.12.2"
   gem "email_spec", ">= 1.2.1"
-  gem "cucumber-rails", ">= 1.3.0", :require => false
-  gem "launchy", ">= 2.1.2"
-  gem "therubyracer", :group => :assets, :platform => :ruby
+  gem "factory_girl_rails", ">= 4.0.0"
+  gem "shoulda-matchers"
+  gem 'forgery', '0.5.0'
+  gem "capybara", ">=2.0.2"
   gem "database_cleaner", ">= 0.8.0"
-  gem "mocha"
-end
 
-gem "mocha", :group => :test
+  gem "guard-rspec", '~> 2.4.0'
+  gem "guard-bundler"
+  gem "guard-livereload"
+  gem "rb-inotify", '~> 0.8.8', :require => false
+end
 
 gem "capistrano"
 gem "rvm-capistrano"
