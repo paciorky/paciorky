@@ -3,7 +3,7 @@ gem 'rails', '3.2.12'
 group :assets do
   gem 'sass-rails', '~> 3.2.6'
   gem 'uglifier', '>= 1.0.3'
-  gem "bootstrap-sass", ">= 2.3.0.0"
+  gem "bootstrap-sass", "2.3.0.0"
   gem "therubyracer", :platform => :ruby
 end
 gem 'jquery-rails'
@@ -32,6 +32,10 @@ group :development, :test do
   gem "guard-bundler"
   gem "guard-livereload"
   gem "rb-inotify", '~> 0.8.8', :require => false
+end
+
+group :production do
+  gem 'newrelic_rpm'
 end
 
 gem "capistrano"
