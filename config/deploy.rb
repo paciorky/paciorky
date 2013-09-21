@@ -12,11 +12,11 @@ require "rvm/capistrano"
 
 default_run_options[:pty] = true
 set :application, "Paciorky"
-set :repository, "http://deployer:e0TdnCyJ@hg.paciorky.com/ruby/paciorky"
+set :repository, "git@github.com:paciorky/paciorky.git"
 
 set :scm, "git"
-set :scm_password, "e0TdnCyJ"
-set :scm_username, "deployer"
+#set :scm_password, "e0TdnCyJ"
+#set :scm_username, "deployer"
 #set :deploy_via, :remote_cache
 set :branch, :master
 set :keep_releases, 5
