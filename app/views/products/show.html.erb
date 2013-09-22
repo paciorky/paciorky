@@ -20,7 +20,7 @@
   }(document, "script", "twitter-wjs");</script>
 <% end %>
 
-<% title @item.name %>
+<% title @product.name %>
 <ul class="breadcrumb clearfix">
   <%= content_tag :li do %>
     <%= link_to("Головна", root_path) %>
@@ -31,38 +31,38 @@
     <span class="divider">/</span>
   <% end %>
   <%= content_tag :li do %>
-    <%= link_to(@item.category.name, @item.category) %>
+    <%= link_to(@product.category.name, @product.category) %>
     <span class="divider">/</span>
   <% end %>
-  <%= content_tag :li, @item.name, :class => :active %>
+  <%= content_tag :li, @product.name, :class => :active %>
 </ul>
 
-<div id="large-image" class="pull-left thumb"><%= image_tag(@item.assets.first.asset.url(:large)) %></div>
+<div id="large-image" class="pull-left thumb"><%= image_tag(@product.assets.first.asset.url(:large)) %></div>
 <div id="thumbs" class="pull-right">
   <ul class="unstyled">
-    <% @item.assets.each do |asset| %>
+    <% @product.assets.each do |asset| %>
       <%= content_tag :li, link_to(image_tag(asset.asset.url(:thumb)), asset.asset.url(:large)), :class => :thumb %>
     <% end %>
   </ul>
 </div>
 <div class="item-details pull-left clearfix">
-  <h1 class="title  pull-left"><%= @item.name %></h1>
+  <h1 class="title  pull-left"><%= @product.name %></h1>
 
   <div class="social-buttons pull-right">
     <div class="pull-left">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= URI::encode(item_url(@item)) %>" data-via="paciorky" data-count="horizontal" data-lang="en">Tweet</a>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= URI::encode(item_url(@product)) %>" data-via="paciorky" data-count="horizontal" data-lang="en">Tweet</a>
     </div>
-    <div class="fb-like pull-left" style="margin-right:21px;" data-href="<%= item_url(@item) %>" data-layout="button_count" data-width="250" data-show-faces="false"></div>
+    <div class="fb-like pull-left" style="margin-right:21px;" data-href="<%= item_url(@product) %>" data-layout="button_count" data-width="250" data-show-faces="false"></div>
     <div class="pull-left">
-      <a href="http://pinterest.com/pin/create/button/?url=<%= URI::encode(item_url(@item)) %>&media=<%= URI::encode(item_url(@item.assets.first.asset.url(:large))) %>&description=<%= URI::encode(strip_tags(@item.description).split(/\s+/, 50+1)[0...50].join(' ')) %>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It"/></a>
+      <a href="http://pinterest.com/pin/create/button/?url=<%= URI::encode(item_url(@product)) %>&media=<%= URI::encode(item_url(@product.assets.first.asset.url(:large))) %>&description=<%= URI::encode(strip_tags(@product.description).split(/\s+/, 50+1)[0...50].join(' ')) %>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It"/></a>
     </div>
   </div>
 
-  <div class="price"><%= number_to_currency(@item.price) %></div>
-  <%= link_to 'Придбати', new_item_order_path(@item), :class => 'btn btn-buy' %>
+  <div class="price"><%= number_to_currency(@product.price) %></div>
+  <%= link_to 'Придбати', new_item_order_path(@product), :class => 'btn btn-buy' %>
 
   <div class="description">
-    <%= @item.description.html_safe %>
+    <%= @product.description.html_safe %>
   </div>
 
 

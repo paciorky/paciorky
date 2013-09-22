@@ -1,7 +1,37 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 uk:
+  activerecord:
+    attributes:
+      asset:
+        asset: Файл
+      product:
+        category: Категорія
+        category_id: Категорія
+        description: Опис
+        name: Ім’я
+        price: Ціна
+  admin:
+    navigation:
+      categories: Категорії
+      orders: Замовлення
+      pages: Сторінки
+      products: Товари
+    products:
+      index:
+        add_product: Додати товар
+        categories_title: ! 'Категорії: '
+        name: Назва
+        price: Ціна
+      new:
+        new_product: Новий товар
+  cancel: Скасувати
+  category:
+    form:
+      edit: Редагування категорії
+      new: Нова категорія
+    notice:
+      created: Категорію успішно додано.
+      deleted: Категорію видалено :(
+      edited: Категорію успішно збережено.
   date:
     abbr_day_names:
     - нд.
@@ -12,7 +42,7 @@ uk:
     - пт.
     - сб.
     abbr_month_names:
-    -
+    - 
     - січ.
     - лют.
     - бер.
@@ -38,7 +68,7 @@ uk:
       long: ! '%d %B %Y'
       short: ! '%d %b'
     month_names:
-    -
+    - 
     - Січень
     - Лютий
     - Березень
@@ -120,16 +150,67 @@ uk:
       month: Місяць
       second: Секунда
       year: Рік
-  errors: &errors
+  destroy: Видалити
+  devise:
+    confirmations:
+      confirmed: Ваш обліковий запис підтверджено. Ви увійшли в систему.
+      send_instructions: Ви отримаєте лист з інструкціями по підтвердженню вашого облікового запису протягом декількох хвилин.
+      send_paranoid_instructions: Якщо Ваша email адреса існує в нашій базі даних, то протягом декількох хвилин Ви отримаєте лист з інструкціями по підтвердженню Вашого облікового запису.
+    failure:
+      already_authenticated: Ви вже увійшли в систему.
+      inactive: Ваш обліковий запис ще не активований.
+      invalid: Невірний email чи пароль.
+      invalid_token: Невірний ключ аутентифікації.
+      locked: Ваш обліковий запис заблоковано.
+      not_found_in_database: Невірний email чи пароль.
+      timeout: Час вашої сесії вичерпано. Будь-ласка, увійдіть в систему знову.
+      unauthenticated: Вам необхідно увійти в систему чи зареєструватися.
+      unconfirmed: Ви маєте підтвердити Ваш обліковий запис.
+    mailer:
+      confirmation_instructions:
+        subject: Інструкції з підтвердження облікового запису
+      reset_password_instructions:
+        subject: Інструкції з відновлення паролю
+      unlock_instructions:
+        subject: Інструкції з розблокування облікового запису
+    omniauth_callbacks:
+      failure: Ви не можете увійти в систему з облікового запису %{kind}, так як "%{reason}".
+      success: Вхід в систему з облікового запису %{kind} успішний.
+    passwords:
+      no_token: Ця сторінка доступна тільки при переході з email для скидання паролю. Якщо Ви перейшли по посиланню з листа, будь-ласка, переконайтесь, що Ви використовували повний URL.
+      send_instructions: Протягом декількох хвилин Ви отримаєте лист з інструкціями по скиданню Вашого паролю.
+      send_paranoid_instructions: Якщо Ваша email адреса існує в нашій базі даних, то протягом декількох хвилин Ви отримаєте лист з інструкціями по відновленню Вашого паролю.
+      updated: Ваш пароль було змінено. Ви увійшли в систему.
+      updated_not_active: Ваш пароль було змінено успішно.
+    registrations:
+      destroyed: До побачення! Ваш обліковий запис був успішно видалений. Сподіваємось незабаром побачитись з Вами знову.
+      signed_up: Ласкаво просимо! Ви успішно зареєструвалися.
+      signed_up_but_inactive: Ви успішно зареєструвалися, але Ви не можете увійти в систему тому, що Ваш обліковий запис ще не активований.
+      signed_up_but_locked: Ви успішно зареєструвалися, але Ви не можете увійти в систему тому, що Ваш обліковий запис заблоковано.
+      signed_up_but_unconfirmed: Ви отримаєте лист з інструкціями по підтвердженню вашого облікового запису протягом декількох хвилин.
+      update_needs_confirmation: Ваш обліковий запис оновлено успішно, але необхідно підтвердити Вашу нову email адресу. Будь-ласка, перевірте свою електронну скриньку і перейдіть за посиланням "Підтвердити", шоб завершити оновлення email адреси.
+      updated: Ваш обліковий запис змінено.
+    sessions:
+      signed_in: Ви увійшли в систему.
+      signed_out: Ви вийшли з системи.
+    unlocks:
+      send_instructions: Протягом декількох хвилин Ви отримаєте лист з інструкціями по розблокуванню Вашого облікового запису.
+      send_paranoid_instructions: Якщо Ваш обліковий запис існує, то протягом декількох хвилин Ви отримаєте лист з інструкціями по його розблокуванню.
+      unlocked: Ваш обліковий запис розблоковано. Ви увійшли в систему.
+  edit: Редагувати
+  errors:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: має бути прийнятий
+      already_confirmed: вже підтверждено. Будь-ласка, спробуйте увійти в систему
       blank: не може бути пустим
       confirmation: не збігається з підтвердженням
+      confirmation_period_expired: має бути підтверджено протягом %{period}, будь-ласка, попросіть підтвердження запису ще раз
       empty: не може бути порожнім
       equal_to: має дорівнювати %{count}
       even: має бути парним
       exclusion: зарезервовано
+      expired: застаріла. Будь-ласка, попросіть знову
       greater_than: має бути більше ніж %{count}
       greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
       inclusion: не включено до переліку
@@ -138,6 +219,13 @@ uk:
       less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
       not_a_number: не число
       not_an_integer: не э цілим числом
+      not_found: не знайдено
+      not_locked: не заблоковано
+      not_saved:
+        few: ! '%{resource}: не вдалося зберегти через %{count} помилки'
+        many: ! '%{resource}: не вдалося зберегти через %{count} помилок'
+        one: ! '%{resource}: не вдалося зберегти через %{count} помилку'
+        other: ! '%{resource}: не вдалося зберегти через %{count} помилок'
       odd: має бути непарним
       record_invalid: ! 'Виникли помилки: %{errors}'
       taken: вже зайнятий
@@ -163,28 +251,41 @@ uk:
         many: ! '%{model} не збережено через %{count} помилок'
         one: ! '%{model} не збережено через %{count} помилку'
         other: ! '%{model} не збережено через %{count} помилки'
+  form:
+    back_to_list: Повернутись до списку
   helpers:
     select:
       prompt: ! 'Оберіть: '
     submit:
-      create: Створити %{model}
-      submit: Зберегти %{model}
-      update: Зберегти %{model}
-
-      item:
-        create: Додати товар
-        submit: Зберегти товар
-        update: Зберегти товар
       category:
         create: Додати категорію
         submit: Зберегти категорію
         update: Зберегти категорію
+      create: Створити %{model}
       page:
         create: Додати сторінку
         submit: Зберегти сторінку
         update: Зберегти сторінку
+      product:
+        create: Додати товар
+        submit: Зберегти товар
+        update: Зберегти товар
+      submit: Зберегти %{model}
+      update: Зберегти %{model}
+  item:
+    form:
+      edit: Редагуваня товару
+      new: Новий товар
+    notice:
+      created: Товар успішно додано.
+      deleted: Товар видалено :(
+      edited: Товар успішно збережено.
+  login: Увійти
+  logout: Вийти
+  message_sent: Дякуємо! Ваше повідомлення надіслано.
   messages:
-    confirmation: 'Ви впевнені?'
+    confirmation: Ви впевнені?
+  no_translation_for: ! 'Переклад вісутній для:'
   number:
     currency:
       format:
@@ -230,9 +331,9 @@ uk:
             many: Трильйонів
             one: Трильйон
             other: Трильйонів
-          unit: ''
+          unit: 
       format:
-        delimiter: ''
+        delimiter: 
         precision: 1
         significant: false
         strip_insignificant_zeros: false
@@ -250,10 +351,38 @@ uk:
           tb: ТБ
     percentage:
       format:
-        delimiter: ''
+        delimiter: 
     precision:
       format:
-        delimiter: ''
+        delimiter: ! ','
+  order:
+    form:
+      edit: Редагування сторінки
+      new: Нова сторінка
+    notice:
+      created: Сторінку успішно додано.
+      deleted: Сторінку видалено :(
+      edited: Сторінку успішно збережено.
+  page:
+    form:
+      edit: Редагування сторінки
+      new: Нова сторінка
+    notice:
+      created: Сторінку успішно додано.
+      deleted: Сторінку видалено :(
+      edited: Сторінку успішно збережено.
+  price: Ціна
+  product: Product
+  show: Деталі
+  simple_form:
+    error_notification:
+      default_message: ! 'Будь ласка, перегляньте, проблеми описані нижче:'
+    'no': Ні
+    required:
+      html: <abbr title="обов’язкове">*</abbr>
+      mark: ! '*'
+      text: обов’язкове
+    'yes': Так
   support:
     array:
       last_word_connector: ! ' та '
@@ -266,101 +395,5 @@ uk:
       long: ! '%d %B %Y, %H:%M'
       short: ! '%d %b, %H:%M'
     pm: по полудні
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-
-    models:
-      message: "Форма контакту"
-    attributes:
-      message:
-        name: "Ім’я"
-        email: "E-mail"
-        subject: "Тема"
-        body: "Повідомлення"
-  activerecord:
-    errors:
-      <<: *errors
-
-    models:
-      item: 'Товар'
-      category: 'Категорія'
-      page: 'Сторінка'
-      order: 'Замовлення'
-    attributes:
-      item:
-        name: 'Назва'
-        description: 'Опис'
-        price: 'Ціна'
-        category: 'Категорія'
-      category:
-        name: 'Назва'
-        cover: 'Обкладинка'
-      page:
-        title: 'Заголовок'
-        slug: 'Короткий лінк (анг.)'
-        content: 'Наповнення'
-      asset:
-        asset: 'Фото'
-      order:
-        first_name: 'Ім’я'
-        last_name: 'Прізвище'
-        phone: 'Моб. телефон'
-        city: 'Місто'
-        comments: 'Коментарі'
-    state_machines:
-      states:
-        new: 'Нове'
-        delivered: 'Відправлено'
-        canceled: 'Скасовано'
-      event:
-        deliver: 'Доставити'
-        cancel: 'Скасувати'
-
-  login: 'Увійти'
-  logout: 'Вийти'
-  destroy: 'Видалити'
-  edit: 'Редагувати'
-  show: 'Деталі'
-  cancel: 'Скасувати'
-  no_translation_for: 'Переклад вісутній для:'
-  message_sent: "Дякуємо! Ваше повідомлення надіслано."
-
   web-app-theme:
     confirm: Ви впевнені?
-
-  ### Item ###
-  item:
-    form:
-      new: Новий товар
-      edit: Редагуваня товару
-    notice:
-      created: Товар успішно додано.
-      edited: Товар успішно збережено.
-      deleted: Товар видалено :(
-  category:
-    form:
-      new: Нова категорія
-      edit: Редагування категорії
-    notice:
-      created: Категорію успішно додано.
-      edited: Категорію успішно збережено.
-      deleted: Категорію видалено :(
-  page:
-    form:
-      new: Нова сторінка
-      edit: Редагування сторінки
-    notice:
-      created: Сторінку успішно додано.
-      edited: Сторінку успішно збережено.
-      deleted: Сторінку видалено :(
-  order:
-    form:
-      new: Нова сторінка
-      edit: Редагування сторінки
-    notice:
-      created: Сторінку успішно додано.
-      edited: Сторінку успішно збережено.
-      deleted: Сторінку видалено :(
-

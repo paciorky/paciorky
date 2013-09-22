@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  belongs_to :item
+  belongs_to :product
 
   attr_accessible :first_name, :last_name, :city, :email, :phone, :comments, :item_id
 

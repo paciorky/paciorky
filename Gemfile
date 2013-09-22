@@ -5,33 +5,41 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "bootstrap-sass", "2.3.0.0"
   gem "therubyracer", :platform => :ruby
+
 end
 gem 'jquery-rails'
-gem "mysql2", ">= 0.3.11"
+gem "mysql2", "~> 0.3.13"
 
 gem "devise", ">= 2.1.2"
 gem "simple_form"
 gem "nested_form"
 gem "paperclip", "~> 3.2"
+gem "jquery-fileupload-rails"
 gem "tinymce-rails"
 gem "tinymce-rails-langs"
 gem "friendly_id"
 gem "state_machine"
+gem 'localeapp'
 
 group :development, :test do
-  gem "nifty-generators"
-  gem "rspec-rails", ">= 2.12.2"
-  gem "email_spec", ">= 1.2.1"
-  gem "factory_girl_rails", ">= 4.0.0"
+  gem "rspec-rails"
+  gem "email_spec"
+  gem "accept_values_for"
+  gem "factory_girl_rails"
   gem "shoulda-matchers"
-  gem 'forgery', '0.5.0'
-  gem "capybara", ">=2.0.2"
-  gem "database_cleaner", ">= 0.8.0"
+  gem 'forgery'
+  gem "database_cleaner"
+  gem "spork-rails"
+end
 
+group :development do
+  gem "nifty-generators"
+  gem 'guard-bundler'
   gem "guard-rspec", '~> 2.4.0'
   gem "guard-bundler"
   gem "guard-livereload"
   gem "rb-inotify", '~> 0.8.8', :require => false
+  gem 'rb-fsevent', '~> 0.9'
 end
 
 group :production do

@@ -1,6 +1,6 @@
-<%= tinymce_assets %>
+<%#= tinymce_assets %>
 
-<%= simple_nested_form_for [:admin, @item], :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+<%= simple_nested_form_for [:admin, @product], :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>
@@ -10,8 +10,8 @@
   <legend><%= yield(:title) %></legend>
   <%= f.input :name, :input_html => { :class => "span8" } %>
   <%= f.input :description, :input_html => { :class => "span8 tinymce" } %>
-  <%= tinymce :theme => "simple", :language => "uk" %>
-  <%= f.input :price, :label => "Ціна (грн.)", :input_html => { :class => "span8" } %>
+  <%#= tinymce :theme => "simple", :language => I18n.locale %>
+  <%= f.input :price, :label => t('activerecord.attributes.product.price'), :input_html => { :class => "span8" } %>
   <%= f.association :category, :required => true, :input_html => { :class => 'span8' } %>
 
   <div class="control-group">
@@ -20,19 +20,19 @@
         <% unless asset.object.new_record? %>
           <div class="pull-left" style="padding-right: 5px;">
             <%= image_tag(asset.object.asset.url(:thumb)) if asset.object.asset? %>
-            <p></br><%= asset.check_box :_destroy %>
+            <p><br/><%= asset.check_box :_destroy %>
               </p>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
-  <legend>Завантажити нові фотографії</legend>
+  <legend><%= t '.upload_photo' %></legend>
   <% f.simple_fields_for :assets %>
-  <p><%= f.link_to_add "Додати фото", :assets, :class => "btn" %></p>
+  <p><%= f.link_to_add t('.add_photo'), :assets, :class => "btn" %></p>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
-    <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+    <%= submit_tag t('.cancel'), :type => :reset, :class => "btn btn-danger" %>
   </div>
 <% end %>

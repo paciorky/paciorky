@@ -8,11 +8,11 @@
     <span class="divider">/</span>
   <% end %>
   <%= content_tag :li do %>
-    <%= link_to(@order.item.category.name, @order.item.category) %>
+    <%= link_to(@order.product.category.name, @order.product.category) %>
     <span class="divider">/</span>
   <% end %>
   <%= content_tag :li do %>
-    <%= link_to(@order.item.name, @order.item) %>
+    <%= link_to(@order.product.name, @order.product) %>
     <span class="divider">/</span>
   <% end %>
   <%= content_tag :li, "Замовлення", :class => :active %>
@@ -22,9 +22,9 @@
 <h1><%= yield(:title) %></h1>
 
 <div class="thumb pull-right ">
-  <%= image_tag(@order.item.assets.first.asset.url(:medium)) %>
-  <div class="title"><%= link_to @order.item.name, @order.item %></div>
-  <div class="price"><%= number_to_currency(@order.item.price) %></div>
+  <%= image_tag(@order.product.assets.first.asset.url(:medium)) %>
+  <div class="title"><%= link_to @order.product.name, @order.product %></div>
+  <div class="price"><%= number_to_currency(@order.product.price) %></div>
 </div>
 
 <div class="pull-left">

@@ -1,5 +1,5 @@
 <ul class="menu nav nav-pills">
-  <%= content_tag :li, link_to("Крамничка", categories_path), :class => "#{active_link_class('category')} #{active_link_class('item')}" %>
+  <%= content_tag :li, link_to("Крамничка", categories_path), :class => "#{active_link_class('category')} #{active_link_class('product')}" %>
   <%= content_tag :li, link_to("Галерея", root_path) %>
   <%= content_tag :li, link_to("Оплата і доставка", page_path("shipping-and-payments")), :class => active_page_class("shipping-and-payments") %>
   <%= content_tag :li, link_to("Про автора", page_path(:about)), :class => active_page_class(:about) %>

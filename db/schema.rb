@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923210213) do
+ActiveRecord::Schema.define(:version => 20130922005359) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
-    t.integer  "item_id"
+    t.integer  "product_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
@@ -29,19 +29,6 @@ ActiveRecord::Schema.define(:version => 20120923210213) do
     t.datetime "updated_at", :null => false
     t.integer  "cover_id"
   end
-
-  create_table "items", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.float    "price"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "category_id"
-    t.string   "slug"
-    t.boolean  "published"
-  end
-
-  add_index "items", ["slug"], :name => "index_items_on_slug", :unique => true
 
   create_table "orders", :force => true do |t|
     t.string   "first_name"
@@ -65,6 +52,19 @@ ActiveRecord::Schema.define(:version => 20120923210213) do
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
+    t.string   "slug"
+    t.boolean  "published"
+  end
+
+  add_index "products", ["slug"], :name => "index_items_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

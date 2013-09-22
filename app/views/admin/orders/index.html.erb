@@ -12,8 +12,8 @@
   <tbody>
   <% for order in @orders %>
     <tr id="<%= dom_id(order) %>">
-      <td><%= image_tag(order.item.assets.first.asset.url(:thumb)) %></td>
-      <td><%= order.item.name %></td>
+      <td><%= image_tag(order.product.assets.first.asset.url(:thumb)) %></td>
+      <td><%= order.product.name %></td>
       <td><%= order.client_name %></td>
       <td><%= order.human_state_name %></td>
       <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
