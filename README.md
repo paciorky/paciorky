@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/paciorky/paciorky.png?label=ready)](https://waffle.io/paciorky/paciorky)  
 paciorky
 ========
 
