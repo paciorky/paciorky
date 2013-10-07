@@ -5,15 +5,18 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem "bootstrap-sass", "2.3.0.0"
   gem "therubyracer", :platform => :ruby
-
 end
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem "mysql2", "~> 0.3.13"
 
 gem "devise", ">= 2.1.2"
 gem "simple_form"
 gem "nested_form"
 gem "paperclip", "~> 3.2"
+gem 'carrierwave'
+gem 'mini_magick'
 gem "jquery-fileupload-rails"
 gem "tinymce-rails"
 gem "tinymce-rails-langs"

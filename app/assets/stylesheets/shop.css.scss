@@ -4,7 +4,7 @@
 html, body { height: 100%; }
 
 body {
-  background: image-url("bg.jpg") repeat-y top center;
+  //background: image-url("bg.jpg") repeat-y top center;
 }
 
 .wrapper {
@@ -15,23 +15,16 @@ body {
 }
 
 header {
+  padding: 20px 0;
 
   .logo {
-    width: 978px;
-    height: 138px;
-    position: relative;
-    background: image-url("top_bg.jpg") no-repeat;
-    text-align: center;
-
-    img {
-      margin-top: 20px;
-    }
+    font-family: 'PT Serif Caption', serif;;
   }
 
   .menu.nav {
     margin-top: 18px;
     &> li > a {
-      font-size: 21px;
+      font-size: 1.2em;
       line-height: 35px;;
     }
   }
@@ -44,13 +37,13 @@ header {
     &> a {
       padding: 0 7px;
       &:hover {
-        //text-decoration: underline;
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: lighten($base-font-color, 70%);
       }
     }
     &.active a {
-      color: $linkColor;
-      background-color: rgba(255, 255, 255, 0.7); }
+      color: #ffffff;
+      background-color: lighten($base-font-color, 50%);
+    }
     &.active a:hover { color: $linkColorHover; }
   }
 }
@@ -103,17 +96,17 @@ header {
 // Items
 .thumb {
   position: relative;
-  margin-bottom: 20px;
-  margin-right: 15px;
-  padding: 6px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  padding: 10px;
   @include border-radius(4px);
-  @include box-shadow(0 1px 3px rgba(0,0,0,.055));
-  background-color: rgba(255, 255, 255, 0.7);
+  @include box-shadow(0 1px 3px rgba(0,0,0,.155));
+  background-color: lighten($base-font-color, 80%);
 
   img { border: none; }
-  .title { margin-top: 5px; }
+  .title { margin-top: 10px; }
   .price { color: #808080; font-size: 12px; }
-  &:nth-child(4n+4) { margin-right: 0; }
+  &:nth-child(3n+3) { margin-right: 0; }
 
   .promo-container {
     position: absolute;

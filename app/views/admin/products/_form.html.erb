@@ -1,10 +1,10 @@
 <%#= tinymce_assets %>
 
 <%= simple_nested_form_for [:admin, @product], :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
-  <% if notification = f.error_notification %>
+  <% if f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>
-      <%= notification %>
+      <%= f.error_notification %>
     </div>
   <% end %>
   <legend><%= yield(:title) %></legend>
@@ -12,15 +12,15 @@
   <%= f.input :description, :input_html => { :class => "span8 tinymce" } %>
   <%#= tinymce :theme => "simple", :language => I18n.locale %>
   <%= f.input :price, :label => t('activerecord.attributes.product.price'), :input_html => { :class => "span8" } %>
-  <%= f.association :category, :required => true, :input_html => { :class => 'span8' } %>
+  <%= f.association :category, :input_html => { :class => 'span8' } %>
 
   <div class="control-group">
     <div class="controls">
-      <%= f.simple_fields_for :assets do |asset| %>
-        <% unless asset.object.new_record? %>
+      <%= f.simple_fields_for :images do |image_form| %>
+        <% unless image_form.object.new_record? %>
           <div class="pull-left" style="padding-right: 5px;">
-            <%= image_tag(asset.object.asset.url(:thumb)) if asset.object.asset? %>
-            <p><br/><%= asset.check_box :_destroy %>
+            <%= image_tag(image_form.object.image.url(:thumb)) if image_form.object.image? %>
+            <p><br/><%= image_form.check_box :_destroy %>
               </p>
           </div>
         <% end %>
@@ -28,8 +28,8 @@
     </div>
   </div>
   <legend><%= t '.upload_photo' %></legend>
-  <% f.simple_fields_for :assets %>
-  <p><%= f.link_to_add t('.add_photo'), :assets, :class => "btn" %></p>
+  <% f.simple_fields_for :images %>
+  <p><%= f.link_to_add t('.add_photo'), :images, :class => "btn" %></p>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

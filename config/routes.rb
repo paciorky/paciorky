@@ -2,17 +2,14 @@ Paciorky::Application.routes.draw do
 
   resources :pages, :only => [:show]
   resources :categories, :only => [:index, :show]
-  resources :products, :only => [:show] do
+  resources :products, :only => [:index, :show] do
     resources :orders, :only => [:new, :create]
   end
 
   match "/contacts" => "contacts#new", :as => 'contacts', :via => :get
   match '/contacts/sent' => 'contacts#create', :as => 'contacts_sent', :via => :post
 
-  #match "products/:id/order" => "orders#new" , :as => "new_order", :constraints => { :item_id => /\d+/ }, :via => :get
-  #match "products/:id/buy" => "orders#create", :as => "create_order", :via => :post
-
-  root :to => "home#index"
+  root :to => "products#index"
   devise_for :users
 
   get "/admin" => redirect("/admin/products")

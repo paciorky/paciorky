@@ -2,10 +2,10 @@
 
 <div class="well">
   <%= link_to t('.add_product'), new_admin_product_path, :class => :btn %>
-  <%= form_tag admin_products_path, :method => :get, :class => 'form-inline pull-right' do |f| %>
-    <%= label_tag t('.categories_title') %>
-    <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]),  { :include_blank => true, :onchange => 'this.form.submit()' } %>
-  <% end %>
+  <!--<%= form_tag admin_products_path, :method => :get, :class => 'form-inline pull-right' do |f| %>-->
+    <!--<%= label_tag t('.categories_title') %>-->
+    <!--<%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]),  { :include_blank => true, :onchange => 'this.form.submit()' } %>-->
+  <!--<% end %>-->
 </div>
 
 <table class="table table-striped table-hover">

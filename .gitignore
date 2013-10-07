@@ -37,6 +37,7 @@ db/*.sqlite3
 /public/cache
 /public/stylesheets/compiled
 /public/system/*
+/public/uploads/*
 /spec/tmp/*
 /cache
 /capybara*
@@ -72,21 +73,3 @@ pickle-email-*.html
 
 # vim artifacts
 **.swp
-=======
-*.rbc
-*.sassc
-.sass-cache
-capybara-*.html
-.rspec
-/.bundle
-/vendor/bundle
-/log/*
-/tmp/*
-/db/*.sqlite3
-/public/system/*
-/coverage/
-/spec/tmp/*
-**.orig
-rerun.txt
-pickle-email-*.html
->>>>>>> 33bddd829ddb5f2bccf8732ed8ea84105cc605ac

@@ -19,10 +19,7 @@ class Admin::ProductsController < Admin::BaseController
   def create
     @product = Product.new(params[:product])
     if @product.save
-      @product.category.cover = @product if @product.category.products.count <= 1
-      if @product.category.save
-        redirect_to edit_admin_product_path(@product), :notice => t('product.notice.created')
-      end
+      redirect_to edit_admin_product_path(@product), :notice => t('product.notice.created')
     else
       render :action => 'new'
     end
@@ -44,6 +41,6 @@ class Admin::ProductsController < Admin::BaseController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to admin_product_path, :notice => t('product.notice.deleted')
+    redirect_to admin_products_path, :notice => t('product.notice.deleted')
   end
 end
