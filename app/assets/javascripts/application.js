@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-alert
+//= require bootstrap-transition
 //= require bootstrap-carousel
 //= require jquery_nested_form
 //= require item

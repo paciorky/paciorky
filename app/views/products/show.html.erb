@@ -22,12 +22,27 @@
 
 <% title @product.name %>
 
-<div id="large-image" class="pull-left thumb"><%= image_tag(@product.cover_image_url(:large)) %></div>
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <% @product.images.each_with_index do |image, index| %>
+        <li data-target="#myCarousel" data-slide-to="<%= "#{index}" %>" class="<% if index == 0 %>active<% end %>"></li>
+    <% end %>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% @product.images.each_with_index do |image, index| %>
+    <div class="large-image thumb item <% if index == 0 %>active<% end %>">
+      <%= image_tag(image.image.url(:large)) %>
+    </div>
+    <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
 <div id="thumbs" class="pull-right hide">
   <ul class="unstyled">
-    <% @product.images.each do |image| %>
-      <%= content_tag :li, link_to(image_tag(image.image.url(:thumb)), image.image.url(:large)), :class => :thumb %>
-    <% end %>
   </ul>
 </div>
 <div class="item-details pull-left clearfix">
