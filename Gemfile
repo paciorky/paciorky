@@ -18,8 +18,7 @@ gem "paperclip", "~> 3.2"
 gem 'carrierwave'
 gem 'mini_magick'
 gem "jquery-fileupload-rails"
-gem "tinymce-rails"
-gem "tinymce-rails-langs"
+gem 'bootstrap-wysihtml5-rails'
 gem "friendly_id"
 gem "state_machine"
 gem 'localeapp'

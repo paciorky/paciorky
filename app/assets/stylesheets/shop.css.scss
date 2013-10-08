@@ -136,7 +136,7 @@ header {
   margin: 0;
   padding: 0;
   background: none;
-  border: 1px #808080 solid;
+  border: none;
   @include border-radius(0);
 }
 
@@ -196,4 +196,9 @@ footer {
       &.active a:hover { color: #fff; }
     }
   }
+}
+
+.center {
+  margin-left:auto;
+  margin-right:auto;
 }

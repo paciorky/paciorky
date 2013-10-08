@@ -13,5 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.sortable
-//= require bootstrap-alert
+//= require bootstrap
 //= require jquery_nested_form
+//= require bootstrap-wysihtml5
+
+$(document).ready(function(){
+    $('.wysihtml5').wysihtml5();
+})
